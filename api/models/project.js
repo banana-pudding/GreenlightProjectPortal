@@ -9,10 +9,24 @@ const Schema = mongoose.Schema;
 let Project = new Schema(
     {
         name: String,
-        owner: String,
-        ownerID: String,
-        status: String,
-        description: String,
+        ownerEUID: String, //euid of owner
+        ownerName: String, //pretty name of owner
+        contributers: [
+            //list of extra contributers (can be empty)
+            {
+                contributerEUID: String, //euid
+                contributerName: String, //pretty name
+            },
+        ],
+        sponsors: [
+            //list of euids of sponsors, can be one or empty
+            {
+                sponsorEUID: String, //euid
+                sponsorName: String, //pretty name
+            },
+        ],
+        status: String, //still need formal names of statuses!!
+        description: String, //longtext description of project
         file: String,
         tags: [String],
     },
