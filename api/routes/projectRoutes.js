@@ -14,7 +14,7 @@ module.exports = function (app) {
         tags: String //comma or whitespace separated list of tags (this will be split up here)
     }
     */
-    app.get("/submit", async function (req, res) {
+    app.post("/submit", async function (req, res) {
         res.status(200);
     });
 };
