@@ -11,11 +11,13 @@ let Project = new Schema(
         name: String,
         ownerEUID: String, //euid of owner
         ownerName: String, //pretty name of owner
+        ownerEmail: String,
         contributers: [
             //list of extra contributers (can be empty)
             {
                 contributerEUID: String, //euid
                 contributerName: String, //pretty name
+                contributerEmail: String,
             },
         ],
         sponsors: [
@@ -23,9 +25,10 @@ let Project = new Schema(
             {
                 sponsorEUID: String, //euid
                 sponsorName: String, //pretty name
+                sponsorEmail: String,
             },
         ],
-        status: String, //still need formal names of statuses!!
+        status: String, //new, recruiting, active, paused, stopped, archived, proposal
         description: String, //longtext description of project
         file: String,
         tags: [String],
