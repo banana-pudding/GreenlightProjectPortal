@@ -1,0 +1,55 @@
+.outer-container {
+  display: inline-flex;
+}
+
+.login-image-container {
+  width: 50vw;
+  height: 100vh;
+}
+
+.login-form-container {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-form {
+  margin: auto;
+  margin-top: 50px;
+  width: 90%;
+}
+
+.login-title {
+  font-weight: 800;
+  text-align: left;
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.login-subtitle {
+  font-weight: 600;
+  text-align: left;
+  font-size: 1.25em;
+  margin: 0;
+}
+
+.login-text-field {
+  margin: 0;
+  height: 30px;
+  font-size: large;
+}
+
+.login-remember {
+  position: relative;
+  margin: auto;
+  margin-left: -50%;
+  margin-top: 30px;
+}
+
+.login-button {
+  margin-top: 60px;
+  width: 100%;
+}
