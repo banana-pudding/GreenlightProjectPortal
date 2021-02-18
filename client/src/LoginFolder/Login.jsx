@@ -37,11 +37,12 @@ export default class LoginPage extends React.Component {
         alert(`Submitting form:\n\nUsername: ${user.username}\nPassword: ${user.password}\nRemember: ${user.remember}`);
     }
 
+
     render() {
         return (
             <div className={"outer-container"}>
                 <div className={"login-image-container"}>
-                    image here
+                    <img src={window.location.origin + "/unt_eagle_statue.png"} alt="UNT Eagle Statue" width="100%"/>
                 </div>
                 <div className={"login-form-container"}>
                     <div className={"inner-container"}>
