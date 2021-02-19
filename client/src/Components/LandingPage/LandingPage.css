@@ -45,3 +45,24 @@
 #about-section p {
   text-align: left;
 }
+
+/* Projects Section styles */
+#projects-section{
+  background-color: #C4C4C4;
+  height: 50vh;
+  padding-top: 5vh;
+  margin-top: 10vh;
+  column-count: 2;
+  /* column-gap: 15%; */
+}
+
+#projects-section p {
+  padding-right: 25%;
+  padding-left: 25%;
+  text-align: justify;
+}
+
+#projects-section h2 {
+  column-span: all;
+  padding-bottom: 5vh;
+}

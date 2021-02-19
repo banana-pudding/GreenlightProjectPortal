@@ -32,10 +32,14 @@ export default class LandingPage extends React.Component {
                     borderColor : '#2B2B2B',
                     width: "90%",
                     opacity: 0.15
-                }}/> 
+                }}/>
 
                 {/* Projects Section */}
                 <div id={"projects-section"}>
+                <h2>A place where great ideas meet great minds</h2>
+                {/* FIXME add relavent content for this section */}
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis in eu mi bibendum. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Id ornare arcu odio ut sem nulla pharetra. Volutpat lacus laoreet non curabitur gravida.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis in eu mi bibendum. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Id ornare arcu odio ut sem nulla pharetra. Volutpat lacus laoreet non curabitur gravida.</p>
                 </div>
 
                 {/* How it works section */}
