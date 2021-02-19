@@ -1,11 +1,38 @@
 #big-container {
 	margin: 0;
 	position: absolute;
-	top: 50%;
+	top: 65%;
 	left: 50%;
-	width: 60%;
+	width: 70%;
 	transform: translate(-50%, -80%);
 	
+}
+
+/*Adjust size/positioning to fit multiple viewports*/
+
+@media only screen and (max-width: 700px) {
+	#big-container {
+		width: 100%;
+		bottom: -25%
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#big-container {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 901px) and  (max-width: 1200px) {
+	#big-container {
+		width: 90%
+	}
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1500px) {
+	#big-container {
+		width: 80%;
+	}
 }
 
 #round-edges {
