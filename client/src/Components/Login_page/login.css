@@ -1,14 +1,33 @@
-.outer-container {
+.login-outer-container {
   display: inline-flex;
 }
 
 .login-image-container {
-  width: 50vw;
   height: 100vh;
 }
 
+@media only screen and (min-width: 100px) {
+  .login-image-container {
+    display: none;
+  }
+
+  .login-form-container {
+    width: 95vw;
+  }
+}
+
+@media only screen and (min-width: 1030px) {
+  .login-image-container {
+    display: inherit;
+    width: 50vw;
+  }
+
+  .login-form-container {
+    width: 50vw;
+  }
+}
+
 .login-form-container {
-  width: 50vw;
   height: 100vh;
   display: flex;
   justify-content: center;
