@@ -1,19 +1,25 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import { BrowserRouter, Route } from "react-router-dom";
-import LoginPage from "./LoginFolder/Login"
-import LandingPage from "./Components/LandingPage/LandingPage.jsx"
-import { Component } from 'react';
+import Routes from "./Components/Routes"
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Route exact path="/" component={LandingPage}/>
-        <Route exact path="/login" component={LoginPage}/>
-      </BrowserRouter>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    //this is where the token check will go with the API
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {/*put the Header component here*/}
+        <Routes />
+        {/*put the Footer component here*/}
+      </div>
+    )
+  }
 }
 
 export default App;

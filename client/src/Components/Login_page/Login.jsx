@@ -40,7 +40,7 @@ export default class LoginPage extends React.Component {
 
     render() {
         return (
-            <div className={"outer-container"}>
+            <div className={"login-outer-container"}>
                 <div className={"login-image-container"}>
                     <img src={window.location.origin + "/unt_eagle_statue.png"} alt="UNT Eagle Statue" width="100%"/>
                 </div>
