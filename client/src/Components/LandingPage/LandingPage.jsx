@@ -39,12 +39,17 @@ export default class LandingPage extends React.Component {
 
     render() {
         return (
-            <div className={"outer-container"}>
-                <div className={"hero-image"} style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("${process.env.PUBLIC_URL }/landing_page_background.png")`}}>
-                    <div class="hero-text">
-                        <h1>Project Greenlight</h1>
-                    </div>
+            <div id={"landingpage-container"}>
+                <div className={"hero-image"} style={{backgroundImage: `url("${process.env.PUBLIC_URL }/landing_page_background.png")`}}>
+                    <div id={"hero-banner"}></div>
+                    <h1 id={"hero-text"}>Project Greenlight</h1>
                 </div>
+                <div id={"about-section"}>
+                    <h2>About Project Greenlight</h2>
+                    <p>The UNT Greenlight Projects Portal works to serve as a central hub for a repository of carefully curated project concepts by UNT faculty and students.</p>
+                </div>
+                <div id={"projects-section"}></div>
+                <div id={"howitworks-section"}></div>
             </div>
         )
     }
