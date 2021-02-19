@@ -34,6 +34,7 @@
     color: white;
     z-index: 2;
 }
+
 /* About section styles */
 #about-section {
   height: 25vh;
@@ -65,4 +66,16 @@
 #projects-section h2 {
   column-span: all;
   padding-bottom: 5vh;
+}
+
+/* How it works section styles*/
+#howitworks-section {
+  height: 50vh;
+  column-count: 3;
+}
+
+#howitworks-section h2{
+  column-span: all;
+  padding-bottom: 5vh;
+  padding-top: 5vh;
 }

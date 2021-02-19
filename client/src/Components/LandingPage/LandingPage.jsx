@@ -43,7 +43,12 @@ export default class LandingPage extends React.Component {
                 </div>
 
                 {/* How it works section */}
-                <div id={"howitworks-section"}></div>
+                <div id={"howitworks-section"}>
+                    <h2>How the Portol Works</h2>
+                    <p>Talk about how you need to be part of unt, but external people is in the works</p>
+                    <p>Talk about the apporval process (curating projects)</p>
+                    <p>Talk about where the code is stored, how you can get onto a team and other stuff. </p>
+                </div>
             </div>
         )
     }
