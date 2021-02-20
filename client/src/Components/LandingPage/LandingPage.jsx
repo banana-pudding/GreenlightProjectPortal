@@ -21,7 +21,7 @@ export default class LandingPage extends React.Component {
                         backgroundColor: '#008444',
                         height: .5,
                         borderColor : '#008444',
-                        width: "20%"
+                        width: "40%"
                     }}/>
                     <p>The UNT Greenlight Projects Portal works to serve as a central hub for a repository of carefully curated project concepts by UNT faculty and students.</p>
                 </div>

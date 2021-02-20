@@ -1,0 +1,10 @@
+#navbar-container{
+    width: 90vw;
+    height: 75px;
+    background-color: black;
+    z-index: 3;
+    position: absolute;
+    float: right;
+    left: 5%;
+}
+
