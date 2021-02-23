@@ -4,11 +4,14 @@
   justify-content: space-evenly;
   width: 100vw;
   margin-top: 30px;
+  min-height: 75vh;
+  padding-top: 14vh;
+  padding-bottom: 30px;
 }
 
 /*name and description container*/
 .projectView-name-desc-container {
-  width: 60%;
+  width: 50%;
   border: solid 1px grey;
   border-radius: 10px;
   padding: 30px 40px;
