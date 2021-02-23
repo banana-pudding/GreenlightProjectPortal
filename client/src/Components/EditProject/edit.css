@@ -1,0 +1,164 @@
+.edit-outer-container {
+  	display: inline-flex;
+}
+
+.edit-form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 100px) {
+  .edit-form-container {
+    width: 95vw;
+  }
+}
+
+@media only screen and (max-width: 1091px) {
+	.submit-container {
+		width: 100%;
+		margin-bottom: 2em;
+	}
+
+	.custom-button {
+		margin-bottom: 1em;
+	}
+}
+
+.title-container {
+	width: 90%;
+	margin: auto;
+}
+
+.edit-title {
+  font-weight: 700;
+  font-size: 1.5em;
+  text-align: left;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.edit-form {
+  margin: auto;
+  margin-top: 1em;
+  width: 90%;
+}
+
+.form-labels {
+	text-align: left;
+	font-weight: 600;
+	width: 100%;
+}
+
+#description {
+	height: 6em;
+	min-height: 2em;
+	max-height: 12em;
+}
+
+.button-container {
+	float: left;
+	margin-bottom: 2em;
+}
+
+.submit-container {
+	float: right;
+}
+
+#edit-submit-button {
+	background-color: #008444;
+	border-radius: 20px;
+	border: none;
+}
+
+.custom-button {
+	border-radius: 20px !important;
+	font-weight: 600 !important;
+	margin-right: .5em;
+	font-size: .8em !important;
+}
+
+/*Solid button*/
+.solid {
+	border: none !important;
+	color: white !important;
+}
+
+/*Outline button*/
+.outline {
+	border-width: 2px !important;
+}
+
+/*Styling for individual buttons*/
+
+#new-button {
+	background-color: deepskyblue;
+}
+
+#new-button:hover, #new-button:focus {
+	background-color: #00ace6;
+}
+
+#recruiting-button {
+	background-color: darkturquoise;
+}
+
+#recruiting-button:hover, #recruiting-button:focus {
+	background-color: #00b0b3;
+}
+
+#active-button {
+	background-color: limegreen;
+}
+
+#active-button:hover, #active-button:focus {
+	background-color: #2db92d;
+}
+
+#paused-button {
+	background-color: white;
+	border-color: gold;
+	color: gold;
+}
+
+#paused-button:hover, #paused-button:focus {
+	border-color: #e6c300;
+	color: #e6c300;
+}
+
+#stopped-button {
+	background-color: white;
+	border-color: red;
+	color: red;
+}
+
+#stopped-button:hover, #stopped-button:focus {
+	border-color: #cc0000;
+	color: #cc0000;
+}
+
+#archived-button {
+	background-color: white;
+	border-color: #ff4da6;
+	color: #ff4da6;
+}
+
+#archived-button:hover, #archived-button:focus {
+	border-color: #ff0080;
+	color: #ff0080;
+}
+
+#proposal-button {
+	background-color: white;
+	border-color: blueviolet;
+	color: blueviolet;
+}
+
+#proposal-button:hover, #proposal-button:focus {
+	border-color: #6918b4;
+	color: #6918b4;
+}
+
+

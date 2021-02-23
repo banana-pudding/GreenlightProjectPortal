@@ -2,7 +2,7 @@ import React from 'react';
 import "./create.css" 
 import {Container, Row, Col, Form, FormGroup, FormText, Label, Input, Button} from 'reactstrap';
 
-export default class EditPage extends React.Component {
+export default class CreatePage extends React.Component {
 
 	constructor(props) {
 		super(props);
