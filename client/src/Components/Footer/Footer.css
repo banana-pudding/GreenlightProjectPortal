@@ -1,0 +1,41 @@
+#footer{
+    height: 35vh;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+}
+
+#blackbanner {
+    background-color: black;
+    height: 25vh;
+}
+
+#footerlogo{
+    height: 20vh;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#leftside{
+    height: 25vh;
+    width: 50%;
+    position: absolute;
+    text-align: left;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+#rightside {
+    height: 25vh;
+    right: 0;
+    width: 50%;
+    position: absolute;
+    padding-right: 2vw;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    color: white;
+}

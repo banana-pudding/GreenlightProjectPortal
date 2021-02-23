@@ -1,0 +1,19 @@
+#navbar-container{
+    width: 80vw;
+    height: 11vh;
+    /* background-color: black; */
+    z-index: 1;
+    position: absolute;
+    float: right;
+    left: 10%;
+    /* opacity: 0.92; */
+}
+
+#navbar{
+    background-color: rgba(9, 8, 8, 0.92);
+    height: 10vh;
+}
+
+.navlink {
+    color: white;
+}
