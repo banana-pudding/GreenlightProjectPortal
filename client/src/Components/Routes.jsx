@@ -15,8 +15,9 @@ export default class Routes extends React.Component {
             <BrowserRouter>
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/login" component={LoginPage}/>
-		        <Route exact path="/create" component={CreatePage}/>
+		<Route exact path="/create" component={CreatePage}/>
                 <Route exact path="/edit" component={EditPage}/>
+                {/* <Route path="*" component={LandingPage} /> */}
             </BrowserRouter>
         )
     }
