@@ -1,0 +1,52 @@
+/*page container*/
+.projectView-outer-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin-top: 30px;
+}
+
+/*name and description container*/
+.projectView-name-desc-container {
+  width: 60%;
+  border: solid 1px grey;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.projectView-name {
+  font-size: 2.5em;
+  font-weight: bold;
+  border-bottom: inset 3px lightgray;
+}
+
+.projectView-descTitle {
+  text-align: left;
+  font-size: 2em;
+  font-weight: 600;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  border-bottom: inset 2px lightgray;
+}
+
+.projectView-description {
+  text-align: left;
+  margin: 15px 0px;
+}
+
+/*details (sponsor, contributors, github, status) container*/
+.projectView-details-desc {
+  width: 30%;
+  font-size: 1.3em;
+  padding: 30px 40px;
+  text-align: left;
+}
+
+.projectView-row {
+  border-bottom: inset 1px lightgray;
+  padding: 15px;
+}
+
+.projectView-lastrow {
+  padding: 15px;
+}
