@@ -38,7 +38,7 @@ let Project = new Schema(
         dateStarted: date,
         datePaused: date,
         dateStopped: date,
-        image: String,
+        file: String,
     },
     {
         collection: "projects",
@@ -46,7 +46,10 @@ let Project = new Schema(
 );
 
 //this makes name, description and status searchable, and the weights are how significant a match in the given property is
-Project.index({ name: "text", description: "text" }, { weights: { name: 5, description: 3 } });
+Project.index(
+    { name: "text", description: "text", status: "text" },
+    { weights: { name: 5, description: 3, status: 1 } }
+);
 
 //methods to search for strings in all the projects
 Project.statics = {
@@ -54,7 +57,11 @@ Project.statics = {
         console.log("seasrch partial");
         return this.find(
             {
-                $or: [{ name: new RegExp(q, "gi") }, { description: new RegExp(q, "gi") }],
+                $or: [
+                    { name: new RegExp(q, "gi") },
+                    { description: new RegExp(q, "gi") },
+                    { status: new RegExp(q, "gi") },
+                ],
             },
             callback
         );
