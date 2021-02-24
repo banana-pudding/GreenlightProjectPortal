@@ -1,3 +1,70 @@
+/*responsive small screen aka phones*/
+@media only screen and (min-width: 100px) {
+  .projectView-outer-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projectView-name-desc-container {
+    width: 90%;
+  }
+  .projectView-details-desc {
+    width: 100%;
+  }
+  .projectView-name {
+    font-size: 1.5em;
+    padding-bottom: 10px;
+  }
+  .projectView-descTitle {
+    font-size: 1.2em;
+  }
+}
+
+/*responsive small screen aka tablets*/
+@media only screen and (min-width: 700px) {
+  .projectView-outer-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projectView-name-desc-container {
+    width: 90%;
+  }
+  .projectView-details-desc {
+    width: 100%;
+  }
+  .projectView-name {
+    font-size: 2em;
+  }
+  .projectView-descTitle {
+    font-size: 1.5em;
+  }
+}
+
+/*responsive big screen aka desktops*/
+@media only screen and (min-width: 1030px) {
+  .projectView-outer-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .projectView-name-desc-container {
+    width: 50%;
+  }
+
+  .projectView-details-desc {
+    width: 30%;
+  }
+  .projectView-name {
+    font-size: 2.5em;
+  }
+  .projectView-descTitle {
+    font-size: 2em;
+  }
+}
+
 /*page container*/
 .projectView-outer-container {
   display: flex;
@@ -11,21 +78,18 @@
 
 /*name and description container*/
 .projectView-name-desc-container {
-  width: 50%;
   border: solid 1px grey;
   border-radius: 10px;
   padding: 30px 40px;
 }
 
 .projectView-name {
-  font-size: 2.5em;
   font-weight: bold;
   border-bottom: inset 3px lightgray;
 }
 
 .projectView-descTitle {
   text-align: left;
-  font-size: 2em;
   font-weight: 600;
   padding-top: 15px;
   padding-bottom: 5px;
@@ -39,7 +103,6 @@
 
 /*details (sponsor, contributors, github, status) container*/
 .projectView-details-desc {
-  width: 30%;
   font-size: 1.3em;
   padding: 30px 40px;
   text-align: left;
@@ -52,4 +115,101 @@
 
 .projectView-lastrow {
   padding: 15px;
+}
+
+/*status buttons*/
+.projectView-status-button {
+  border-radius: 20px;
+  font-weight: 600;
+  margin: 0.5em 0.5em 0.5em 0em;
+  font-size: 0.8em;
+  padding: 3px 10px;
+}
+
+.projectView-status-button:hover {
+  cursor: default;
+}
+
+.projectView-new-filled {
+  background-color: deepskyblue;
+  border: none;
+  color: white;
+}
+
+.projectView-new-outline {
+  background-color: white;
+  border: solid 2px deepskyblue;
+  color: deepskyblue;
+}
+
+.projectView-recruiting-filled {
+  background-color: darkturquoise;
+  border: none;
+  color: white;
+}
+
+.projectView-recruiting-outline {
+  background-color: white;
+  border: solid 2px darkturquoise;
+  color: darkturquoise;
+}
+
+.projectView-active-filled {
+  background-color: limegreen;
+  border: none;
+  color: white;
+}
+
+.projectView-active-outline {
+  background-color: white;
+  border: solid 2px limegreen;
+  color: limegreen;
+}
+
+.projectView-paused-filled {
+  background-color: gold;
+  border: none;
+  color: white;
+}
+
+.projectView-paused-outline {
+  background-color: white;
+  border: solid 2px gold;
+  color: gold;
+}
+
+.projectView-stopped-filled {
+  background-color: red;
+  border: none;
+  color: white;
+}
+
+.projectView-stopped-outline {
+  background-color: white;
+  border: solid 2px red;
+  color: red;
+}
+
+.projectView-archived-filled {
+  background-color: #ff4da6;
+  border: none;
+  color: white;
+}
+
+.projectView-archived-outline {
+  background-color: white;
+  border: solid 2px #ff4da6;
+  color: #ff4da6;
+}
+
+.projectView-proposal-filled {
+  background-color: blueviolet;
+  border: none;
+  color: white;
+}
+
+.projectView-proposal-outline {
+  background-color: white;
+  border: solid 2px blueviolet;
+  color: blueviolet;
 }
