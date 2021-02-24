@@ -1,7 +1,3 @@
-/*
-Copied from original repo!
-*/
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -9,6 +5,15 @@ const Schema = mongoose.Schema;
 let Project = new Schema(
     {
         name: String,
+        description: String, //longtext description of project
+        flags: {
+            isNew: Boolean,
+            isRecruiting: Boolean,
+            isStarted: Boolean,
+            isPaued: Boolean,
+            isStopped: Boolean,
+        },
+        tags: [String],
         ownerEUID: String, //euid of owner
         ownerName: String, //pretty name of owner
         ownerEmail: String,
@@ -28,10 +33,12 @@ let Project = new Schema(
                 sponsorEmail: String,
             },
         ],
-        status: String, //new, recruiting, active, paused, stopped, archived, proposal
-        description: String, //longtext description of project
+        dateProposed: date,
+        datePromoted: date,
+        dateStarted: date,
+        datePaused: date,
+        dateStopped: date,
         file: String,
-        tags: [String],
     },
     {
         collection: "projects",
