@@ -6,30 +6,35 @@ export default class ProjectView extends React.Component {
         super(props);
 
         this.state = {
-            name: "Pupil Tracking for Diagnosis of Parkinson's Disease",
-            description: "Parkinson's disease is a neurodegenerative disease, in which its symptoms do not appear until the latter years of a patient's life. As of right now, there is no completely consistent and effective manner to determine if a patient has Parkinson's during its earliest stages. However, a 2010 study shows that there is a significant link between the onset of Parkinson's Disease and a patient's post-illumination pupil response, which is essentially the change in a pupil's diameter as it contracts in the presence of various wavelengths. In order to determine the pupil's diameters, researchers and medical professionals used to have to sit in a lab for long periods of time and physically measure each frame as the pupil constricts. Therefore, our objective was to augment a working digitall system which automatically measures each pupil frame, omitting the need for medical professionals to manually fit each frame. Eventually, the goal of the program is to have it fully run on its own and generate accurate data with little effort from the user.\nFor this sub-project, the main goal was to run this program on subjects and generate fits to determine the presence of Parkinson's' disease in patients, as well as determining the reliability of the program. The data that we received from this program depicted the pupil diameters as a result of adding droplets in the eyes. The eye dropllet medication added in these experiments were intended to capture nuances of pupil movement. Once pupil diameters are measured, the pharmacokinetic modeling of the drug effect can be measured in order to determine the drug response.",
-            sponsor: "John Smith",
-            contibutors: ["John Smith", "Paula Perkins", "Taylor Crosby", "Dominik Chang", "Allison Weeks", "Wyatt Greer"],
-            github: "https://github.com/sendgrid/docs",
-            status: {
-                new: true,
-                recruiting: true,
-                active: true,
+            name: props.project ? props.project.name : "Project Name",
+            description: props.project ? props.project.description : "Project Description",
+            sponsor: props.project ? props.project.sponsor : "Project Sponsor",
+            contributors: props.project ? props.project.contibutors : ["Currently no contributors"],
+            github: props.project ? props.project.github : "No GitHub Available",
+            status: props.project ? props.project.status : {
+                new: false,
+                recruiting: false,
+                active: false,
                 paused: false,
                 stopped: false,
                 archived: false,
-                proposals: false
+                proposal: false
             }
         }
     }
 
     render() {
+        //shorten github link if it doesn't fit on page
+        let githubLink = window.outerWidth < 700 ? this.state.github.substring(0, 25) + "..." : this.state.github;
+        //display currently no contributors if there are none
+        let projectContributors = this.state.contributors.length > 0 ? this.state.contributors.join(" | ") : ["Currently no Contributors"];
+
         return (
             <div className={"projectView-outer-container"}>
                 <div className={"projectView-name-desc-container"}>
                     <div className={"projectView-name"}>{this.state.name}</div>
                     <div className={"projectView-descTitle"}>Description</div>
-                    <div className={"projectView-description"}>{this.state.description.split('\n').map(str => <p>{str}</p>)}</div>
+                    <div className={"projectView-description"}>{this.state.description.split('\n').map(str => <p key={str}>{str}</p>)}</div>
                 </div>
                 <div className={"projectView-details-desc"}>
                     <div className={"projectView-row"}><span style={{fontWeight: "bold"}}>{"Sponsored by: "}</span>{this.state.sponsor}</div>
@@ -38,11 +43,27 @@ export default class ProjectView extends React.Component {
                             <span style={{fontWeight: "bold"}}>{"Contributors:\n"}</span>
                         </div>
                         <div>
-                            {this.state.contibutors.join(" | ")}
+                            {projectContributors}
                         </div>
                     </div>
-                    <div className={"projectView-row"}><span style={{fontWeight: "bold"}}>{"Repository: "}</span><a href={this.state.github}>{this.state.github}</a></div>
-                    <div className={"projectView-lastrow"}><span style={{fontWeight: "bold"}}>{"Project Status:"}</span></div>
+                    <div className={"projectView-row"}>
+                        <span style={{fontWeight: "bold"}}>{"Repository: "}</span>
+                        {this.state.github == "No GitHub Available" ? <div>{this.state.github}</div> : <a href={this.state.github}>{githubLink}</a>}
+                    </div>
+                    <div className={"projectView-lastrow"}>
+                        <div>
+                            <span style={{fontWeight: "bold"}}>{"Project Status:"}</span>
+                        </div>
+                        <div>
+                            <button className={`projectView-status-button ${this.state.status.new ? "projectView-new-filled" : "projectView-new-outline"}`}>New</button>
+                            <button className={`projectView-status-button ${this.state.status.recruiting ? "projectView-recruiting-filled" : "projectView-recruiting-outline"}`}>Recruiting</button>
+                            <button className={`projectView-status-button ${this.state.status.active ? "projectView-active-filled" : "projectView-active-outline"}`}>Active</button>
+                            <button className={`projectView-status-button ${this.state.status.paused ? "projectView-paused-filled" : "projectView-paused-outline"}`}>Paused</button>
+                            <button className={`projectView-status-button ${this.state.status.stopped ? "projectView-stopped-filled" : "projectView-stopped-outline"}`}>Stopped</button>
+                            <button className={`projectView-status-button ${this.state.status.archived ? "projectView-archived-filled" : "projectView-archived-outline"}`}>Archived</button>
+                            <button className={`projectView-status-button ${this.state.status.proposal ? "projectView-proposal-filled" : "projectView-proposal-outline"}`}>Proposal</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
