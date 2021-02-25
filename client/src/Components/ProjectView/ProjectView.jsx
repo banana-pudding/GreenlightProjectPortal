@@ -1,10 +1,15 @@
 import React from "react";
 import "./ProjectView.css";
 
+/*  Class:      ProjectView Page
+    Purpose:    Renders a page for viewing the details on a single project.  This page will not be complicated because
+                its only purpose is to show project details.
+*/
 export default class ProjectView extends React.Component {
     constructor(props) {
         super(props);
 
+        //set the state for the project components to match the prop that was sent down
         this.state = {
             name: props.project ? props.project.name : "Project Name",
             description: props.project ? props.project.description : "Project Description",
