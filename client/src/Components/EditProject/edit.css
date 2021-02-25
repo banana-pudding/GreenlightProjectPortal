@@ -16,7 +16,7 @@
   }
 }
 
-@media only screen and (max-width: 1091px) {
+@media only screen and (max-width: 600px) {
 	.submit-container {
 		width: 100%;
 		margin-bottom: 2em;
@@ -70,95 +70,106 @@
 #edit-submit-button {
 	background-color: #008444;
 	border-radius: 20px;
+	margin-bottom: 2em;
 	border: none;
 }
 
-.custom-button {
-	border-radius: 20px !important;
-	font-weight: 600 !important;
-	margin-right: .5em;
-	font-size: .8em !important;
+/*Status buttons*/
+
+.projectView-status-button {
+  border-radius: 20px;
+  font-weight: 600;
+  margin: 0.5em 0.5em 0.5em 0em;
+  font-size: 0.8em;
+  padding: 3px 10px;
+  transition: all .3s ease;
 }
 
-/*Solid button*/
-.solid {
-	border: none !important;
-	color: white !important;
-}
-
-/*Outline button*/
-.outline {
-	border-width: 2px !important;
-}
-
-/*Styling for individual buttons*/
-
-#new-button {
-	background-color: deepskyblue;
-}
-
-#new-button:hover, #new-button:focus {
-	background-color: #00ace6;
-}
-
-#recruiting-button {
-	background-color: darkturquoise;
-}
-
-#recruiting-button:hover, #recruiting-button:focus {
-	background-color: #00b0b3;
-}
-
-#active-button {
-	background-color: limegreen;
-}
-
-#active-button:hover, #active-button:focus {
-	background-color: #2db92d;
-}
-
-#paused-button {
-	background-color: white;
-	border-color: gold;
-	color: gold;
-}
-
-#paused-button:hover, #paused-button:focus {
-	border-color: #e6c300;
-	color: #e6c300;
-}
-
-#stopped-button {
-	background-color: white;
-	border-color: red;
-	color: red;
-}
-
-#stopped-button:hover, #stopped-button:focus {
-	border-color: #cc0000;
-	color: #cc0000;
-}
-
-#archived-button {
-	background-color: white;
-	border-color: #ff4da6;
-	color: #ff4da6;
-}
-
-#archived-button:hover, #archived-button:focus {
-	border-color: #ff0080;
-	color: #ff0080;
-}
-
-#proposal-button {
-	background-color: white;
-	border-color: blueviolet;
-	color: blueviolet;
-}
-
-#proposal-button:hover, #proposal-button:focus {
-	border-color: #6918b4;
-	color: #6918b4;
+.projectView-status-button:hover {
+	transform: scale(1.1);
 }
 
 
+.projectView-new-filled {
+  background-color: deepskyblue;
+  border: none;
+  color: white;
+}
+
+.projectView-new-outline {
+  background-color: white;
+  border: solid 2px deepskyblue;
+  color: deepskyblue;
+}
+
+.projectView-recruiting-filled {
+  background-color: darkturquoise;
+  border: none;
+  color: white;
+}
+
+.projectView-recruiting-outline {
+  background-color: white;
+  border: solid 2px darkturquoise;
+  color: darkturquoise;
+}
+
+.projectView-active-filled {
+  background-color: limegreen;
+  border: none;
+  color: white;
+}
+
+.projectView-active-outline {
+  background-color: white;
+  border: solid 2px limegreen;
+  color: limegreen;
+}
+
+.projectView-paused-filled {
+  background-color: gold;
+  border: none;
+  color: white;
+}
+
+.projectView-paused-outline {
+  background-color: white;
+  border: solid 2px gold;
+  color: gold;
+}
+
+.projectView-stopped-filled {
+  background-color: red;
+  border: none;
+  color: white;
+}
+
+.projectView-stopped-outline {
+  background-color: white;
+  border: solid 2px red;
+  color: red;
+}
+
+.projectView-archived-filled {
+  background-color: #ff4da6;
+  border: none;
+  color: white;
+}
+
+.projectView-archived-outline {
+  background-color: white;
+  border: solid 2px #ff4da6;
+  color: #ff4da6;
+}
+
+.projectView-proposal-filled {
+  background-color: blueviolet;
+  border: none;
+  color: white;
+}
+
+.projectView-proposal-outline {
+  background-color: white;
+  border: solid 2px blueviolet;
+  color: blueviolet;
+}
