@@ -91,7 +91,7 @@ export default class EditPage extends React.Component {
 								</FormGroup>
 								<FormGroup>
 									<Label for = "link" className = "form-labels">Github Link</Label>
-									<Input type = "link" name = "link" id = "link" placeholder = "Enter the link to your Github repository"/>
+									<Input type = "link" name = "link" id = "link" placeholder = "Enter the link to your Github repository."/>
 								</FormGroup>
 								<FormGroup>
 									<Label for = "link" className = "form-labels">Contributors</Label>

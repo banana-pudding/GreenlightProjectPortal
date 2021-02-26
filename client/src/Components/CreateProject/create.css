@@ -1,67 +1,50 @@
-.round-edges {
-	border-radius: 15px;
+.create-outer-container {
+	display: inline-flex;
 }
 
-.content-padding {
-	margin: auto;
-	position: absolute;
-	padding-top: 10%;
-	padding-right: 7%;
+.create-form-container {
+	padding-top: 7em;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-#big-container {
-	margin: 0;
-	position: absolute;
-	top: 65%;
-	left: 50%;
-	width: 70%;
-	transform: translate(-50%, -80%);
-	
+@media only screen and (min-width: 100px) {
+  .create-form-container {
+    width: 95vw;
+  }
 }
 
-#title-bar {
-	border-radius: 15px 0px 0px 15px !important;
-}
-
-#projectDescription {
-	resize: none;
-}
-
-#submit-button {
-	position: relative;
-	left: 40%;
-	border-radius: 20px;
-}
-
-#title-bar, #submit-button {
-	background-color: #008444;
-	color: white;
-}
-
-/*Adjust size/positioning to fit multiple viewports*/
-
-@media only screen and (max-width: 700px) {
-	#big-container {
+@media only screen and (max-width: 600px) {
+	.submit-container {
 		width: 100%;
-		bottom: -25%
+		margin-bottom: 2em;
 	}
 }
 
-@media only screen and (max-width: 900px) {
-	#big-container {
-		margin: auto;
-	}
+.create-title-container, {
+	margin: auto;
 }
 
-@media only screen and (min-width: 901px) and  (max-width: 1200px) {
-	#big-container {
-		width: 90%
-	}
+.create-title {
+  font-weight: 700;
+  font-size: 1.5em;
+  text-align: left;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-@media only screen and (min-width: 1201px) and (max-width: 1500px) {
-	#big-container {
-		width: 80%;
-	}
+.create-form {
+  margin: auto;
+  margin-top: 1em;
+  width: 90%;
 }
 
+#create-submit-button {
+	background-color: #008444;
+	border-radius: 20px;
+	margin-bottom: 2em;
+	border: none;
+}

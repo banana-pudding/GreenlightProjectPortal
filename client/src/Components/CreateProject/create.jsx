@@ -2,6 +2,10 @@ import React from 'react';
 import "./create.css" 
 import {Container, Row, Col, Form, FormGroup, FormText, Label, Input, Button} from 'reactstrap';
 
+/*  Class:      CreatePage
+    Purpose:    Renders our create project page and handles all of the functionality for the create project page
+*/
+
 export default class CreatePage extends React.Component {
 
 	constructor(props) {
@@ -11,6 +15,12 @@ export default class CreatePage extends React.Component {
 		}
 	}
 
+	/* Function:        handleSponsor
+        Arguments:      event - html form event
+        Return:         void
+        Purpose:        sets state when "yes/no" radio buttons are clicked
+    */
+
 	handleSponsor = (event) => {
 		if (event.target.value == "true") {
 			this.setState({sponsor: true})
@@ -18,123 +28,90 @@ export default class CreatePage extends React.Component {
 			this.setState({sponsor: false})
 		}
 	}
-	
+
+	//render page html
 	render() {
-			const containerClasses = 'themed-container shadow bg-white border border-med round-edges';
-			const labelClasses = 'float-left ml-1 font-weight-bold';
-			const legendClasses = 'col-form-label col-12 font-weight-bold';
 
-			return (
-				<div id = "big-container">
+		let legendClasses = 'col-form-label col-12';
 
-					{/*Container with form*/}
-					<Container className = {containerClasses} fluid = {true}>
-						{/*Green title bar*/}
-						<Row xs = "1" sm = "2">
-							<Col id = "title-bar">
-								<h3 className = "pt-1 pb-1">Create a Project</h3>
-							</Col>
-							<Col></Col>
-						</Row>
-
-						{/*Form*/}
-						<Row xs = "1" sm = "2">
-							<Col className = "pl-4">
-								<Form className = "pt-3">
-
-									{/*Project title input*/}
-									<FormGroup>
-										<Label for = "projectTitle" className = {labelClasses}>Title</Label>
-										<Input type = "title" name = "title" id = "projectTitle" placeholder = "My Project"/>
-									</FormGroup>
-
-									{/*Project description input*/}
-									<FormGroup>
-										<Label for = "projectDescription" className = {labelClasses}>Description</Label>
-										<Input type = "textarea" name = "description" id = "projectDescription" placeholder = "Tell us what your project is all about."/>
-									</FormGroup>
-
-									{/*Sponsor input (Yes/No)*/}
-									<Row xs = "12" className = "ml-1">
-									<FormGroup tag = "fieldset" row className = "float-left">
-										<legend className = {legendClasses}>Are you the sponsor of this project?</legend>
-										<Col sm = {10}>
-											<div className = "float-left">
-												<FormGroup check>
-													<Label check>
-														<Input type = "radio" name = "radio1" value = "true" onClick = {this.handleSponsor}/>{' '}
-														Yes
-													</Label>
-												</FormGroup>	
-												<FormGroup check>
-													<Label check>
-														<Input type = "radio" name = "radio1" value = "false" onClick = {this.handleSponsor}/>{' '}
-														No
-													</Label>
-												</FormGroup>
-											</div>
-										</Col>
-									</FormGroup>
-									</Row>
-
-									{/*If no sponsor, render textbox to ask for sponsor*/}
-									{this.state.sponsor? <></> : 
-										<FormGroup>
-										<Label for = "projectSponsor" className = {labelClasses}>Who is your sponsor?</Label>
-										<Input type = "sponsor" name = "sponsor" id = "projectSponsor" placeholder = "Sponsor's name"/>
+		return (
+			<div className = "create-outer-container">
+				<div className = "create-form-container">
+					<Container className = "themed-container shadow border border-med rounded">
+						<div className = "title-container"> 
+							<p className = "create-title">Submit an AI Project for Review</p>
+						</div>
+						<div className = "create-form">
+							<Form>
+								<FormGroup>
+									<Label for = "title" className = "form-labels">Title</Label>
+									<Input type = "title" name = "title" id = "title" placeholder = "My Project"/>
+								</FormGroup>
+								<FormGroup>
+									<Label for = "description" className = "form-labels">Description</Label>
+									<Input type = "textarea" name = "description" id = "description" placeholder = "Tell us what your project is all about."/>
+								</FormGroup>
+								<FormGroup tag = "fieldset">
+									<Label for = "sponsor" className = "form-labels">Are you the sponsor of this project?</Label>
+									<div className = "float-left">
+										<FormGroup check>
+											<Label check>
+												<Input type = "radio" name = "radio1" value = "true" onClick = {this.handleSponsor}/>{' '}
+													Yes
+											</Label>
+										</FormGroup>	
+										<FormGroup check>
+											<Label check>
+												<Input type = "radio" name = "radio1" value = "false" onClick = {this.handleSponsor}/>{' '}
+													No
+											</Label>
 										</FormGroup>
-									}
+									</div>
+								</FormGroup>
 
-									{/*Recruiting input (Yes/No)*/}
-									<Row xs = "12" className = "ml-1">
-									<FormGroup tag = "fieldset" row className = "float-left">
-										<legend className = {legendClasses}>Are you recruiting team members?</legend>
-										<Col sm = {10}>
-											<div className = "float-left">
-												<FormGroup check>
-													<Label check>
-														<Input type = "radio" name = "radio2"/>{' '}
-														Yes	
-													</Label>
-												</FormGroup>
-												<FormGroup check>
-													<Label check>
-														<Input type = "radio" name = "radio2"/>{' '}
-														No
-													</Label>
-												</FormGroup>
-											</div>
-										</Col>
-									</FormGroup>
-									</Row>
+								{/*Render new field when user clicks 'No' radio button*/}
 
+								{this.state.sponsor? <></> : 
 									<FormGroup>
-										<Label for = "projectImage" className = {labelClasses}>Upload an image:</Label>
-										<Input type = "file" name = "file" id = "projectImage"/>
-										<FormText color = "muted" className = "float-left pb-3">
-											This image will be displayed with your project.
-										</FormText>
+									<Label for = "projectSponsor" className = "form-labels">Who is your sponsor?</Label>
+									<Input type = "sponsor" name = "sponsor" id = "projectSponsor" placeholder = "Sponsor's name"/>
 									</FormGroup>
+								}
 
-								</Form>
-							</Col>
-							{/*Column with content & submit button*/}
-							<Col>
+								<FormGroup tag = "fieldset">
+									<Label for = "sponsor" className = "form-labels">Are you recruiting team members?</Label>
+									<div className = "float-left">
+										<FormGroup check>
+											<Label check>
+												<Input type = "radio" name = "radio2" value = "true"/>{' '}
+													Yes
+											</Label>
+										</FormGroup>	
+										<FormGroup check>
+											<Label check>
+												<Input type = "radio" name = "radio2" value = "false"/>{' '}
+													No
+											</Label>
+										</FormGroup>
+									</div>
+								</FormGroup>
 
-								{/*Content*/}
-								<Row>
-								<p className = "pt-3 pr-4 pl-4">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-								</Row>
-
-								{/*Submit button*/}
-								<Row className = "pt-4">
-									<Button size = "lg" id = "submit-button">Submit</Button>
-								</Row>
-							</Col>
-						</Row>
+								<FormGroup>
+									<Label for = "link" className = "form-labels">Github Link</Label>
+									<Input type = "link" name = "link" id = "link" placeholder = "Enter the link to your Github repository."/>
+								</FormGroup>
+								<FormGroup>
+									<Label for = "link" className = "form-labels">Contributors</Label>
+									<p>we need to figure out how to do this</p>
+								</FormGroup>
+							</Form>
+						</div>
+						<div className = "submit-container">
+							<Button id = "create-submit-button">Submit</Button>
+						</div>
 					</Container>
 				</div>
-
+			</div>
 		);
 	}
 }
