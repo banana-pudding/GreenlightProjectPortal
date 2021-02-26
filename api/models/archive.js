@@ -29,12 +29,12 @@ let Archive = new Schema(
                 sponsorEmail: String,
             },
         ],
-        dateProposed: date,
-        datePromoted: date,
-        dateStarted: date,
-        datePaused: date,
-        dateStopped: date,
-        dateArchived: date,
+        dateProposed: Date,
+        datePromoted: Date,
+        dateStarted: Date,
+        datePaused: Date,
+        dateStopped: Date,
+        dateArchived: Date,
         image: String,
     },
     {
@@ -73,4 +73,4 @@ Archive.statics = {
         });
     },
 };
-module.exports = mongoose.models.Post || mongoose.model("Project", Project);
+mongoose.model("Archive", Archive);
