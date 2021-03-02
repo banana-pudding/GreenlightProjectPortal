@@ -11,7 +11,22 @@ export default class CreatePage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			sponsor: true
+			sponsor: true,
+			type: "proposal"
+		}
+	}
+
+	/* Function:        handleProposal
+        Arguments:      event - html form event
+        Return:         void
+        Purpose:        sets state indicating if submission is a proposal or a full-fledged project
+    */
+
+	handleProposal = (event) => {
+		if (event.target.value == "proposal") {
+			this.setState({type: "proposal"})
+		} else if (event.target.value == "project"){
+			this.setState({type: "project"})
 		}
 	}
 
@@ -43,6 +58,24 @@ export default class CreatePage extends React.Component {
 						</div>
 						<div className = "create-form">
 							<Form>
+								<FormGroup tag = "fieldset">
+									<Label for = "proposal" className = "form-labels">What are you submitting?</Label>
+									
+										<FormGroup check>
+											<Label check className = "float-left">
+												<Input type = "radio" name = "radio1" value = "proposal" onClick = {this.handleProposal}/>{' '}
+													Just an idea
+											</Label>
+										</FormGroup>
+										<br/>	
+										<FormGroup check>
+											<Label check className = "float-left">
+												<Input type = "radio" name = "radio1" value = "project" onClick = {this.handleProposal}/>{' '}
+													An active project
+											</Label>
+										</FormGroup>
+								
+								</FormGroup>
 								<FormGroup>
 									<Label for = "title" className = "form-labels">Title</Label>
 									<Input type = "title" name = "title" id = "title" placeholder = "My Project"/>
@@ -51,59 +84,61 @@ export default class CreatePage extends React.Component {
 									<Label for = "description" className = "form-labels">Description</Label>
 									<Input type = "textarea" name = "description" id = "description" placeholder = "Tell us what your project is all about."/>
 								</FormGroup>
-								<FormGroup tag = "fieldset">
-									<Label for = "sponsor" className = "form-labels">Are you the sponsor of this project?</Label>
-									<div className = "float-left">
-										<FormGroup check>
-											<Label check>
-												<Input type = "radio" name = "radio1" value = "true" onClick = {this.handleSponsor}/>{' '}
-													Yes
-											</Label>
-										</FormGroup>	
-										<FormGroup check>
-											<Label check>
-												<Input type = "radio" name = "radio1" value = "false" onClick = {this.handleSponsor}/>{' '}
-													No
-											</Label>
+
+								{this.state.type == "proposal"? <></> :
+									<div>
+										<FormGroup tag = "fieldset">
+											<Label for = "sponsor" className = "form-labels">Are you the sponsor of this project?</Label>
+											<div className = "float-left">
+												<FormGroup check>
+													<Label check>
+														<Input type = "radio" name = "radio2" value = "true" onClick = {this.handleSponsor}/>{' '}
+															Yes
+													</Label>
+												</FormGroup>	
+												<FormGroup check>
+													<Label check>
+														<Input type = "radio" name = "radio2" value = "false" onClick = {this.handleSponsor}/>{' '}
+															No
+													</Label>
+												</FormGroup>
+											</div>
+										</FormGroup>
+
+										{this.state.sponsor? <></> : 
+											<FormGroup>
+												<Label for = "projectSponsor" className = "form-labels">Who is your sponsor?</Label>
+												<Input type = "sponsor" name = "sponsor" id = "projectSponsor" placeholder = "Sponsor's name"/>
+											</FormGroup>}
+
+										<FormGroup tag = "fieldset">
+											<Label for = "sponsor" className = "form-labels">Are you recruiting team members?</Label>
+											<div className = "float-left">
+												<FormGroup check>
+													<Label check>
+													<Input type = "radio" name = "radio3" value = "true"/>{' '}
+														Yes
+													</Label>
+												</FormGroup>	
+												<FormGroup check>
+													<Label check>
+													<Input type = "radio" name = "radio3" value = "false"/>{' '}
+														No
+													</Label>
+												</FormGroup>
+											</div>
+										</FormGroup>
+										<FormGroup>
+											<Label for = "link" className = "form-labels">Github Link</Label>
+											<Input type = "link" name = "link" id = "link" placeholder = "Enter the link to your Github repository."/>
+										</FormGroup>
+										<FormGroup>
+											<Label for = "link" className = "form-labels">Contributors</Label>
+											<p>we need to figure out how to do this</p>
 										</FormGroup>
 									</div>
-								</FormGroup>
-
-								{/*Render new field when user clicks 'No' radio button*/}
-
-								{this.state.sponsor? <></> : 
-									<FormGroup>
-									<Label for = "projectSponsor" className = "form-labels">Who is your sponsor?</Label>
-									<Input type = "sponsor" name = "sponsor" id = "projectSponsor" placeholder = "Sponsor's name"/>
-									</FormGroup>
 								}
-
-								<FormGroup tag = "fieldset">
-									<Label for = "sponsor" className = "form-labels">Are you recruiting team members?</Label>
-									<div className = "float-left">
-										<FormGroup check>
-											<Label check>
-												<Input type = "radio" name = "radio2" value = "true"/>{' '}
-													Yes
-											</Label>
-										</FormGroup>	
-										<FormGroup check>
-											<Label check>
-												<Input type = "radio" name = "radio2" value = "false"/>{' '}
-													No
-											</Label>
-										</FormGroup>
-									</div>
-								</FormGroup>
-
-								<FormGroup>
-									<Label for = "link" className = "form-labels">Github Link</Label>
-									<Input type = "link" name = "link" id = "link" placeholder = "Enter the link to your Github repository."/>
-								</FormGroup>
-								<FormGroup>
-									<Label for = "link" className = "form-labels">Contributors</Label>
-									<p>we need to figure out how to do this</p>
-								</FormGroup>
+								
 							</Form>
 						</div>
 						<div className = "submit-container">
