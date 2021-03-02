@@ -39,3 +39,17 @@
     padding-bottom: 8vh;
     color: white;
 }
+
+@media only screen and (max-width: 1030px) {
+    #footerlogo{
+        visibility: hidden;
+    }
+
+    #leftside{
+        visibility: hidden;
+    }
+
+    #rightside{
+        width: 100vw;
+    }
+}
