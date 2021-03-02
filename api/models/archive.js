@@ -1,17 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Define collection and schema for Post
-let Project = new Schema(
+let Archive = new Schema(
     {
         name: String,
         description: String, //longtext description of project
         flags: {
             isNew: Boolean,
-            isRecruiting: Boolean,
             isStarted: Boolean,
-            isPaused: Boolean,
-            isStopped: Boolean,
         },
         tags: [String],
         ownerEUID: String, //euid of owner
@@ -39,18 +35,17 @@ let Project = new Schema(
         datePaused: Date,
         dateStopped: Date,
         dateArchived: Date,
-        file: String,
+        image: String,
     },
     {
-        collection: "projects",
+        collection: "archived",
     }
 );
 
-//this makes name, description and status searchable, and the weights are how significant a match in the given property is
-Project.index({ name: "text", description: "text" }, { weights: { name: 5, description: 3 } });
+Archive.index({ name: "text", description: "text" }, { weights: { name: 5, description: 3 } });
 
 //methods to search for strings in all the projects
-Project.statics = {
+Archive.statics = {
     searchPartial: function (q, callback) {
         console.log("seasrch partial");
         return this.find(
@@ -78,6 +73,4 @@ Project.statics = {
         });
     },
 };
-
-//cant tell what mongoose.models.Post does??
-mongoose.model("Project", Project);
+mongoose.model("Archive", Archive);
