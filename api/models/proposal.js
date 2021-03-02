@@ -6,6 +6,7 @@ let Proposal = new Schema(
         name: String,
         description: String, //longtext description of project
         flags: {
+            isApproved: Boolean,
             isNew: Boolean,
             canBeUsedFreely: Boolean,
             mustGetPermission: Boolean,
