@@ -8,6 +8,7 @@ let Project = new Schema(
         description: String, //longtext description of project
         flags: {
             isApproved: Boolean,
+            isPendingClaim: Boolean,
             isNew: Boolean,
             isRecruiting: Boolean,
             isStarted: Boolean,

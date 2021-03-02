@@ -10,6 +10,7 @@ let Proposal = new Schema(
             isNew: Boolean,
             canBeUsedFreely: Boolean,
             mustGetPermission: Boolean,
+            isPendingClaim: Boolean,
         },
         tags: [String],
         proposerEUID: String, //euid of owner
