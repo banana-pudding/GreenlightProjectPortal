@@ -14,6 +14,9 @@ let Project = new Schema(
             isStopped: Boolean,
         },
         tags: [String],
+        proposerEUID: String, //euid of proposer
+        proposerName: String, //pretty name of proposer
+        proposerEmail: String,
         ownerEUID: String, //euid of owner
         ownerName: String, //pretty name of owner
         ownerEmail: String,
