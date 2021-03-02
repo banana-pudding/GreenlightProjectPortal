@@ -8,9 +8,6 @@ require("./models/proposal.js");
 require("./models/archive.js");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-
-const session = require("express-session");
-const MongoStore = require("connect-mongo").default;
 const passport = require("passport");
 require("./config/passport")(passport);
 
@@ -26,27 +23,7 @@ app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//use sessions
-app.use(
-    session({
-        secret: process.env.SESSION_SECRET,
-        saveUninitialized: false,
-        resave: false,
-        store: MongoStore.create({
-            mongoUrl: process.env.MONGO_URI,
-            collection: "session",
-            ttl: parseInt(process.env.SESS_LIFETIME) / 1000,
-        }),
-        cookie: {
-            sameSite: true,
-            secure: false,
-            maxAge: parseInt(process.env.SESS_LIFETIME),
-        },
-    })
-);
-
 app.use(passport.initialize());
-app.use(passport.session());
 
 //set up our router
 app.use("/", require("./routes/router"));

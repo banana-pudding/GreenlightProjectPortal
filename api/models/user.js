@@ -20,7 +20,7 @@ let User = new Schema({
 User.methods.generateJWT = function () {
     const today = new Date();
     const expirationDate = new Date(today);
-    expirationDate.setDate(today.getDate() + 60);
+    expirationDate.setDate(today.getDate() + 1);
 
     return jwt.sign(
         {
@@ -28,7 +28,7 @@ User.methods.generateJWT = function () {
             id: this._id,
             exp: parseInt(expirationDate.getTime() / 1000, 10),
         },
-        "secret"
+        process.env.ACCESS_SECRET
     );
 };
 
