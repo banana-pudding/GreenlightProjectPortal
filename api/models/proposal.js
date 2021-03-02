@@ -7,11 +7,13 @@ let Proposal = new Schema(
         description: String, //longtext description of project
         flags: {
             isNew: Boolean,
+            canBeUsedFreely: Boolean,
+            mustGetPermission: Boolean,
         },
         tags: [String],
-        ownerEUID: String, //euid of owner
-        ownerName: String, //pretty name of owner
-        ownerEmail: String,
+        proposerEUID: String, //euid of owner
+        proposerName: String, //pretty name of owner
+        proposerEmail: String,
         dateProposed: Date,
         image: String,
     },
