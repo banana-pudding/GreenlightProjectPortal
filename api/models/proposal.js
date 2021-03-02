@@ -12,7 +12,7 @@ let Proposal = new Schema(
         ownerEUID: String, //euid of owner
         ownerName: String, //pretty name of owner
         ownerEmail: String,
-        dateProposed: date,
+        dateProposed: Date,
         image: String,
     },
     {
@@ -51,4 +51,4 @@ Proposal.statics = {
         });
     },
 };
-module.exports = mongoose.models.Post || mongoose.model("Project", Project);
+mongoose.model("Proposal", Proposal);

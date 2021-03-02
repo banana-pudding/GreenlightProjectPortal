@@ -1,7 +1,3 @@
-/*
-Copied from original repo!
-*/
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -37,12 +33,12 @@ let Project = new Schema(
                 sponsorEmail: String,
             },
         ],
-        dateProposed: date,
-        datePromoted: date,
-        dateStarted: date,
-        datePaused: date,
-        dateStopped: date,
-        dateArchived: date,
+        dateProposed: Date,
+        datePromoted: Date,
+        dateStarted: Date,
+        datePaused: Date,
+        dateStopped: Date,
+        dateArchived: Date,
         file: String,
     },
     {
@@ -84,4 +80,4 @@ Project.statics = {
 };
 
 //cant tell what mongoose.models.Post does??
-module.exports = mongoose.models.Post || mongoose.model("Project", Project);
+mongoose.model("Project", Project);
