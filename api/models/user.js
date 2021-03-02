@@ -34,8 +34,7 @@ User.methods.generateJWT = function () {
 
 User.methods.toAuthJSON = function () {
     return {
-        _id: this._id,
-        euid: this.euid,
+        userData: this,
         token: this.generateJWT(),
     };
 };
