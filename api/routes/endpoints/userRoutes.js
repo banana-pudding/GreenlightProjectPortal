@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const passport = require("passport");
 const router = require("express").Router();
 const auth = require("../auth");
@@ -32,5 +31,19 @@ router.post("/login", auth.optional, function (req, res, next) {
         }
     })(req, res, next);
 });
+
+router.get("/oof", loggedIn, function (req, res) {
+    res.json({ yay: "yay" });
+});
+
+function loggedIn(req, res, next) {
+    auth.required(req, res, function (err) {
+        if (err && err.name === "UnauthorizedError") {
+            return res.status(401).send("Login again");
+        } else {
+            return next();
+        }
+    });
+}
 
 module.exports = router;
