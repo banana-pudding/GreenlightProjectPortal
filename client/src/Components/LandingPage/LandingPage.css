@@ -1,7 +1,3 @@
-#landingpage-container {
-  
-}
-
 .hero-image {
     /* Set a specific height */
     /* height: 100%; */
@@ -131,47 +127,12 @@
 
 
 @media only screen and (max-width: 768px) {
-  #about-section{
-    display: flex;
-    flex-direction: column;
-    height: auto;
-  }
 
-  #about-section h2{
-    margin-top: 3vh;
-  }
-
-  #about-section p {
-    margin-left: 7vw;
-    margin-right: 7vw;
-    margin-top: 7vh;
-    text-align: center;
-  }
-
-  #projects-section{
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding-bottom: 3vh;;
-  }
-
-  #projects-section p{
-    margin-bottom: 5vh;
-    padding-right: 10vw;
-    padding-left: 10vw;
-  }
-
-  #howitworks-section{
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding-bottom: 3vh;
-  }
   #howitworks-section h2{ 
     padding-left: 5vw;
     padding-right: 5vw;
   }
-  
+
   #howitworks-section p{
     margin-bottom: 5vh;
     text-align: center;
