@@ -99,7 +99,33 @@
     margin-left: 7vw;
     margin-right: 7vw;
     margin-top: 7vh;
-    text-align: justify;
+    text-align: center;
+  }
+
+  #projects-section{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 3vh;
+  }
+  
+  #projects-section p{
+    text-align: center;
+    margin-bottom: 5vh;
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+
+  #howitworks-section{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 3vh;
+  }
+
+  #howitworks-section p{
+    margin-bottom: 5vh;
+    text-align: center;
   }
 }
 
@@ -119,6 +145,37 @@
     margin-left: 7vw;
     margin-right: 7vw;
     margin-top: 7vh;
-    text-align: justify;
+    text-align: center;
+  }
+
+  #projects-section{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 3vh;;
+  }
+
+  #projects-section p{
+    margin-bottom: 5vh;
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+
+  #howitworks-section{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 3vh;
+  }
+  #howitworks-section h2{ 
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  
+  #howitworks-section p{
+    margin-bottom: 5vh;
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 }
