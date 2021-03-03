@@ -82,3 +82,43 @@
   padding-bottom: 5vh;
   padding-top: 5vh;
 }
+
+
+@media only screen and (max-width: 1150px) {
+  #about-section{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  #about-section h2{
+    margin-top: 3vh;
+  }
+
+  #about-section p {
+    margin-left: 7vw;
+    margin-right: 7vw;
+    margin-top: 7vh;
+    text-align: justify;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  #about-section{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  #about-section h2{
+    margin-top: 3vh;
+  }
+
+  #about-section p {
+    margin-left: 7vw;
+    margin-right: 7vw;
+    margin-top: 7vh;
+    text-align: justify;
+  }
+}
