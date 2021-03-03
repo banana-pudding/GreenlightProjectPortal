@@ -1,15 +1,21 @@
 var express = require("express");
 var router = express.Router();
+const auth = require("./auth");
 
-// middleware that is specific to this router
-router.use(function timeLog(req, res, next) {
-    console.log("Time: ", Date.now());
-    next();
-});
-
-// define the home page route
-router.get("/", function (req, res) {
-    res.send("Birds home page");
+// check for logged in user unless otherwise specified
+router.use(function (req, res, next) {
+    console.log("checking user authentication");
+    if (req.path != "/users/login") {
+        auth.required(req, res, function (err) {
+            if (err && err.name === "UnauthorizedError") {
+                return res.status(401).send("Login again");
+            } else {
+                return next();
+            }
+        });
+    } else {
+        next();
+    }
 });
 
 router.use("/users", require("./endpoints/userRoutes.js"));
