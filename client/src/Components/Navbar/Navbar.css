@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    background-color: rgba(9, 8, 8, 1);
+    background-color: rgba(9, 8, 8, 0.92);
     height: 10vh;
 }
 
@@ -46,6 +46,12 @@
 
 .nav-links a{
     color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover{
+    color: white;
+    text-decoration: none;
 }
 
 .burger{
@@ -97,6 +103,7 @@
     #navbar-container{
         width: 100vw;
         left: 0;
+        background-color: rgba(9, 8, 8, 1);
     }
 
     .navimg {
