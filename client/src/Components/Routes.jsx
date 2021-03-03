@@ -15,7 +15,12 @@ export default class Routes extends React.Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={LandingPage} />
-                    <Route exact path="/login" component={LoginPage}/>
+                    <Route 
+                        exact 
+                        path="/login" 
+                        render={() => (
+                            <LoginPage setUser={this.props.setUser} user={this.props.user} />
+                        )}/>
                     <Route exact path="/project-view" component={ProjectView} />
                     <Route exact path="/404" component={PageNotFound404} />
                     <Redirect to="/404" />

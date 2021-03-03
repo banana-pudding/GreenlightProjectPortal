@@ -1,6 +1,8 @@
 import React from "react";
 import './login.css';
 import { Form, Input, FormGroup, Label, Button } from 'reactstrap';
+import { Redirect } from "react-router-dom";
+import axios from "axios";
 
 /*  Class:      LoginPage
     Purpose:    Renders our login page and handles all of the functionality for the login page
@@ -9,21 +11,21 @@ export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            euid: "",
             password: "",
             remember: false,
-            user: {},
+            user: props.user,
             isLoggedIn: false
         }
     }
 
-    /*  Function:       handleUsername
+    /*  Function:       handleEUID
         Arguments:      event - html form event
         Return:         void
-        Purpose:        maintains the state value with the value that is in the username input box
+        Purpose:        maintains the state value with the value that is in the EUID input box
     */
-    handleUsername = (event) => {
-        this.setState({username: event.target.value})
+    handleEUID = (event) => {
+        this.setState({euid: event.target.value})
     }
 
     /*  Function:       handlePassword
@@ -48,23 +50,33 @@ export default class LoginPage extends React.Component {
         Arguments:      event - html form event
         Return:         void
         Purpose:        Creates the user object for logging in according to the information the user has entered.  It then
-                        creates a login request to the API server and if the user credentials are valid, forwards to the 
-                        projects page, otherwise it informs the user that they input invalid credentials.
+                        makes a post request to the api to try and login the user.  If successful, sets the user object for the
+                        session, if unsuccessful then informs the user.
     */
     handleSubmit = (event) => {
         event.preventDefault();
-        let user = {
-            username: this.state.username,
-            password: this.state.password,
-            remember: this.state.remember
-        }
 
-        alert(`Submitting form:\n\nUsername: ${user.username}\nPassword: ${user.password}\nRemember: ${user.remember}`);
+        axios.post("http://localhost:8080/users/login", {
+            euid: this.state.euid,
+            password: this.state.password
+        }).then((response) => {
+            console.log(response.status);
+            console.log(response.data);
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 
 
     //return the html for the page
     render() {
+
+        if(this.state.user) {
+            return (
+                <Redirect to="/project-view" />
+            )
+        }
+
         return (
             <div className={"login-outer-container"}>
                 <div className={"login-image-container"}>
@@ -77,7 +89,7 @@ export default class LoginPage extends React.Component {
                         <div className={"login-form"}>
                             <Form onSubmit={this.handleSubmit}>
                                 <FormGroup className={"login-text-field"}>
-                                    <Input type="email" name="email" id="email" placeholder="UNT email" onChange={this.handleUsername}/>
+                                    <Input type="text" name="euid" id="euid" placeholder="UNT EUID" onChange={this.handleEUID}/>
                                 </FormGroup>
                                 <FormGroup className={"login-text-field"}>
                                     <Input type="password" name="password" id="password" placeholder="UNT Password" onChange={this.handlePassword}/>
