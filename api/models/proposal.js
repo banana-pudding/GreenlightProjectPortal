@@ -13,11 +13,17 @@ let Proposal = new Schema(
             isPendingClaim: Boolean,
         },
         tags: [String],
+        github: String,
         proposerEUID: String, //euid of owner
         proposerName: String, //pretty name of owner
         proposerEmail: String,
         dateProposed: Date,
-        image: String,
+        pendingClaim: {
+            claimingUserID: String,
+            contributorEmails: [String],
+            sponsorEmails: [String],
+            github: String,
+        },
     },
     {
         collection: "proposals",

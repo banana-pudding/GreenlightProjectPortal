@@ -22,12 +22,12 @@ let Project = new Schema(
         ownerEUID: String, //euid of owner
         ownerName: String, //pretty name of owner
         ownerEmail: String,
-        contributers: [
+        contributors: [
             //list of extra contributers (can be empty)
             {
-                contributerEUID: String, //euid
-                contributerName: String, //pretty name
-                contributerEmail: String,
+                contributorEUID: String, //euid
+                contributorName: String, //pretty name
+                contributorEmail: String,
             },
         ],
         sponsors: [
@@ -38,6 +38,12 @@ let Project = new Schema(
                 sponsorEmail: String,
             },
         ],
+        pendingClaim: {
+            claimingUserID: String,
+            contributorEmails: [String],
+            sponsorEmails: [String],
+            github: String,
+        },
         dateProposed: Date,
         datePromoted: Date,
         dateStarted: Date,
