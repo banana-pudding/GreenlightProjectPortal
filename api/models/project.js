@@ -7,6 +7,8 @@ let Project = new Schema(
         name: String,
         description: String, //longtext description of project
         flags: {
+            isApproved: Boolean,
+            isPendingClaim: Boolean,
             isNew: Boolean,
             isRecruiting: Boolean,
             isStarted: Boolean,
@@ -14,6 +16,9 @@ let Project = new Schema(
             isStopped: Boolean,
         },
         tags: [String],
+        proposerEUID: String, //euid of proposer
+        proposerName: String, //pretty name of proposer
+        proposerEmail: String,
         ownerEUID: String, //euid of owner
         ownerName: String, //pretty name of owner
         ownerEmail: String,

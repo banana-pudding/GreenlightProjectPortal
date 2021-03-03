@@ -17,8 +17,18 @@ req.body should look like the following:
     tags: String //comma or whitespace separated list of tags (this will be split up here)
 }
 */
-router.post("/submit", async function (req, res) {
+router.post("/submit", loggedIn, async function (req, res) {
     res.status(200);
 });
+
+function loggedIn(req, res, next) {
+    auth.required(req, res, function (err) {
+        if (err && err.name === "UnauthorizedError") {
+            return res.status(401).send("Login again");
+        } else {
+            return next();
+        }
+    });
+}
 
 module.exports = router;
