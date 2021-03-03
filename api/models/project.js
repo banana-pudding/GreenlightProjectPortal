@@ -6,7 +6,9 @@ let Project = new Schema(
     {
         name: String,
         description: String, //longtext description of project
+        github: String,
         flags: {
+            isProposal: Boolean,
             isApproved: Boolean,
             isPendingClaim: Boolean,
             isNew: Boolean,
@@ -44,13 +46,13 @@ let Project = new Schema(
             sponsorEmails: [String],
             github: String,
         },
+        dateAdded: Date,
         dateProposed: Date,
-        datePromoted: Date,
+        dateClaimed: Date,
         dateStarted: Date,
         datePaused: Date,
         dateStopped: Date,
         dateArchived: Date,
-        file: String,
     },
     {
         collection: "projects",
