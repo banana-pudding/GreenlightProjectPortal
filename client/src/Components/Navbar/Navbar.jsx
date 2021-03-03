@@ -42,7 +42,7 @@ export default class Navbarcomp extends React.Component {
                         <li><a href="#projects">Projects</a> </li>
                         <li><a href="#Submit">Submit a Project</a></li>
                     </ul>
-                        <Button id="navbutton" size="md" style={{backgroundColor:"#008444", border: "none"}} href="/login">Sign In</Button>
+                        <Button id="navbutton" size="md" style={{marginRight: "3vh", backgroundColor:"#008444", border: "none"}} href="/login">Sign In</Button>
                 </div>
             </div>
         )
