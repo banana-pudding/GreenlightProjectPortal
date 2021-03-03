@@ -1,16 +1,19 @@
 #footer{
-    height: 35vh;
+    height: auto;
     position: relative;
     left: 0;
     bottom: 0;
     right: 0;
     width: 100%;
     background: white;
+    padding-bottom: 2vh;
 }
 
 #blackbanner {
     background-color: black;
     height: 25vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #footerlogo{
@@ -42,14 +45,20 @@
 
 @media only screen and (max-width: 1030px) {
     #footerlogo{
-        visibility: hidden;
+        display: none;
     }
 
     #leftside{
-        visibility: hidden;
+        display: none;
     }
 
     #rightside{
         width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-top: 4vh;
+        padding-bottom: 4vh;
     }
 }
