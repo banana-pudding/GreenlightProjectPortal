@@ -1,37 +1,49 @@
 import React from "react";
 import './Navbar.css';
 import {
-    Collapse,
-    Navbar,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
     Button
   } from 'reactstrap';
 
 export default class Navbarcomp extends React.Component {
 
+    handleNavSlide = (event) => {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        // toggling navbar
+        nav.classList.toggle('nav-active');
+
+        // link animation
+        navLinks.forEach((link, index) => {
+            if(link.style.animation){
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFadeIn 0.5s ease forwards ${index/7 + 0.5}s`;
+            }
+        });
+
+        // burger animation
+        burger.classList.toggle('toggle');
+    }
+
     render() {
         return (
             <div id={"navbar-container"}>
-                <Navbar id={"navbar"} expand="lg">
-                    <NavbarBrand href="/"><img src={window.location.origin + "/UNT_Logo.png"} alt="UNT Eagle lgo" width="100%"/></NavbarBrand>
-                    <Nav className="ml-auto" navbar right>
-                        <NavItem>
-                        <NavLink className={"navlink"} href="#about-section">About</NavLink>
-                        </NavItem>
-                        <NavItem>
-                        <NavLink className={"navlink"} href="#projects-section">Projects</NavLink>
-                        </NavItem>
-                        <NavItem>
-                        <NavLink className={"navlink"} href="#howitworks-section">How It Works</NavLink>
-                        </NavItem>
-                        <NavItem>
-                        <Button size="md" style={{backgroundColor:"#008444", border: "none"}} href="/login">Sign In</Button>
-                        </NavItem>
-                    </Nav>
-                </Navbar>
+                <div className={"navbar"} expand="lg">
+                    <a className={"navimg"} href="/"><img src={window.location.origin + "/UNT_Logo.png"} alt="UNT Eagle lgo" width="100%"/></a>
+                    <div className="burger" onClick={this.handleNavSlide}>
+                        <div className="line1"></div>
+                        <div className="line2"></div>
+                        <div className="line3"></div>
+                    </div>
+                    <ul className="nav-links">
+                        <li><a href="/"> Home</a></li>
+                        <li><a href="#projects">Projects</a> </li>
+                        <li><a href="#Submit">Submit a Project</a></li>
+                    </ul>
+                        <Button id="navbutton" size="md" style={{marginRight: "3vh", backgroundColor:"#008444", border: "none"}} href="/login">Sign In</Button>
+                </div>
             </div>
         )
     }
